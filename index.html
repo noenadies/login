@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>miapp</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet"  href="estilos.css">
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #000000;
+            overflow: hidden;
+		}
+        #canvasArea {
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden;
+        }
+
+        
+	</style>
+    <!-- Libs and GDJS core files : -->
+		<script src="code.js"></script>
+
+
+</head>
+<body>
+    <div class ="contenedor">
+
+  
+  
+    <div id="canvasArea"></div>
+
+      <script src="jquery-3.2.1.min.js"></script>
+        user  :<input type="text" name="user" id="user">
+        pass  :<input type="password" name="pass" id="pass">
+         
+ <button onclick="myFunction()" id="boton">Click me</button>
+	<script>
+function iniciajuego(){
+
+     (function() {
+        //Initialization
+        gdjs.registerObjects();
+        gdjs.registerBehaviors();
+        gdjs.registerGlobalCallbacks();
+
+        var game = new gdjs.RuntimeGame(gdjs.projectData, {});
+
+        //Create a renderer
+        var canvasArea = document.getElementById("canvasArea");
+        game.getRenderer().createStandardCanvas(canvasArea);
+
+        //Bind keyboards/mouse/touch events
+        game.getRenderer().bindStandardEvents(game.getInputManager(), window, document);
+
+        //Load all assets and start the game
+        game.loadAllAssets(function() {
+            game.startGameLoop();
+        });
+    })();
+
+}
+
+   
+
+	</script>
+    <script src="inicion.js"></script>
+
+    </div>
+</body>
+</html>
