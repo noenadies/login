@@ -1,0 +1,70 @@
+<html>
+<head>
+
+
+</head>
+
+<body>
+
+<button onclick="mi()">Click me</button>
+<button onclick="mi()">Click 2</button>
+<button onclick="mi()">Click 3</button>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCeh_1KFP7DYfWA2943NAI_TqMntVavc4I",
+    authDomain: "webtodo-b7cd9.firebaseapp.com",
+    databaseURL: "https://webtodo-b7cd9.firebaseio.com",
+    projectId: "webtodo-b7cd9",
+    storageBucket: "webtodo-b7cd9.appspot.com",
+    messagingSenderId: "112145698644"
+  };
+  firebase.initializeApp(config);
+
+  var ref = firebase.database().ref().child('text');
+  ref.on('value', function(snapshot) {
+      	alert(snapshot.val());
+
+
+ 	
+mi(snapshot.val());
+  /*snapshot.forEach(function(childSnapshot) {
+
+    var childKey = childSnapshot.key;
+    var childData = childSnapshot.val();
+      	alert(childData);
+mi(childData);
+    // ...
+  });*/
+});
+
+
+
+
+
+function mi(url) {
+ 	// body...
+
+ 	//alert("clep");
+    window.location.replace(url);
+ }
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+</script>
+
+</body>
+</html>
